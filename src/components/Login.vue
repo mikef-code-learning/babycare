@@ -1,6 +1,6 @@
 <template>
     <div>
-
+        <b-button pill variant="info">Login</b-button>
     </div>
 </template>
 

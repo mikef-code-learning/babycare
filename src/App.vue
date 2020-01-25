@@ -14,6 +14,14 @@ export default {
   components: {
     Login,
     MainInterface
+  },
+  data() {
+    return {
+      authed: this.$store.state.authed
+    }
+  },
+  created() {
+    //eslint-disable-next-line
   }
 }
 </script>

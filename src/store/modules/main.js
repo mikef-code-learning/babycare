@@ -3,7 +3,7 @@ const state = {
 }
 
 const getters = {
-
+    authed: state => state.authed
 }
 
 const mutations = {
@@ -16,7 +16,7 @@ const actions = {
 
 }
 
-export default {
+export let main = {
     namespaced: false,
     state,
     getters,
