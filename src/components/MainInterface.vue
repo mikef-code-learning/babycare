@@ -1,6 +1,6 @@
 <template>
     <div>
-
+        <p>Logged In!</p>
     </div>
 </template>
 
