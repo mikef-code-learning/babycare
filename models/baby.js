@@ -24,7 +24,7 @@ module.exports = function(sequelize, DataTypes) {
     });
 
     Baby.associate = function(models) {
-        Baby.belongsTo(models.Users, {
+        Baby.belongsTo(models.User, {
             foreignKey: {
                 allowNull: false
             }

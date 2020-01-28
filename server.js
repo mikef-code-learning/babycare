@@ -9,10 +9,14 @@ let PORT = process.env.PORT || 3120;
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const db = require('./models')
+// TODO: remove cors once active development is complete
+const cors = require('cors');
+// TODO: remove cors once active development is complete
+app.use(cors());
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(express.static("pub"));
+app.use(express.static("src/dist"));
 app.use(cookieParser(process.env.SESSION_SECRET));
 app.use(
     session({

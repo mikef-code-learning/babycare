@@ -10,7 +10,7 @@
         <div class="form-row justify-content-center mt-2">
             <div class="col-3"></div>
             <div class="col-6">
-                <b-form-input v-model="pword" :type="password" placeholder="Password"></b-form-input>
+                <b-form-input v-model="pword" type="password" placeholder="Password"></b-form-input>
             </div>
             <div class="col-3"></div>
         </div>
@@ -20,6 +20,15 @@
         <div class="form-row justify-content-around mt-4">
             <b-button variant="info" @click="register">Register</b-button>
         </div>
+        <!-- Show Register component as modal -->
+        <b-modal 
+            id="registrationModal"
+            title="Register Your Account"
+            ref="registrationModal"
+            @ok="registerSubmit"
+        >
+            <register ref="registrationComponent"></register>
+        </b-modal>
     </div>
 </template>
 
@@ -35,7 +44,6 @@ export default {
         }
     },
     components: {
-        //eslint-disable-next-line
         Register
     },
     methods: {
@@ -43,12 +51,14 @@ export default {
 
         },
         register() {
-            this.$swal.fire({
-                html: '<register></register>'
-            })
+            this.$bvModal.show('registrationModal')
+        },
+        registerSubmit() {
+            this.$refs.registrationComponent.registration()
         }
     },
     mounted() {
+        this.$bvModal.hide('registrationModal')
     }
 }
 </script>

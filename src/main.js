@@ -2,9 +2,9 @@ import Vue from 'vue'
 import VueX from 'vuex'
 import VueRouter from 'vue-router'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
-// import Swal from 'sweetalert2'
-// import VueSwal from 'vue-sweetalert2'
-import Axios from 'axios'
+//eslint-disable-next-line
+import Swal from 'sweetalert2'
+import VueSwal from 'vue-sweetalert2'
 import App from './App.vue'
 import store from './store/store.js'
 
@@ -15,11 +15,9 @@ Vue.config.productionTip = false
 
 Vue.use(VueX)
 Vue.use(VueRouter)
-Vue.use(Axios)
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
-// Vue.use(Swal)
-// Vue.use(VueSwal)
+Vue.use(VueSwal)
 
 new Vue({
   render: h => h(App),
